@@ -15,8 +15,8 @@ Before you begin, ensure you have the following installed on your local machine:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd backend
+git clone https://github.com/robertoloss/test-backend
+cd test-backend
 ```
 
 ### 2. Install Dependencies
