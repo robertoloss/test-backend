@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+const express_1 = require("express");
+const get_tasks_1 = require("../handlers/tasks/get-tasks");
+const create_task_1 = require("../handlers/tasks/create-task");
+const update_task_1 = require("../handlers/tasks/update-task");
+const delete_task_1 = require("../handlers/tasks/delete-task");
+exports.router = (0, express_1.Router)();
+exports.router.get('/healtz', (_, res) => res.json({ message: "Hello World!" }));
+exports.router.get('/tasks', get_tasks_1.handleGetTasks);
+exports.router.post('/tasks', create_task_1.handleCreateTask);
+exports.router.put('/tasks/:id', update_task_1.handleUpdateTask);
+exports.router.delete('/tasks/:id', delete_task_1.handleDeleteTask);
