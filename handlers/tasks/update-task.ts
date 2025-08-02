@@ -20,9 +20,8 @@ export async function handleUpdateTask(req: Request, res: Response) {
         updatedAt: new Date(),
       },
     })
-    console.log("Task updated: ", updatedTask)
 
-    res.status(400).json({ 
+    res.status(200).json({ 
       message: "New task created successfully!"
     })
 

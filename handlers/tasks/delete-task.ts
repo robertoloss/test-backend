@@ -3,7 +3,7 @@ import { prisma } from '../../prisma/prisma';
 
 
 export async function handleDeleteTask(req: Request, res: Response) {
-  const taskId = Number(req.body?.id)
+  const taskId = Number(req.params?.id)
 
   if (isNaN(taskId)) {
     return res.status(400).json({ error: 'Task ID is required' });
@@ -18,7 +18,7 @@ export async function handleDeleteTask(req: Request, res: Response) {
 
     console.log("Task deleted. Id: ", taskId)
 
-    res.status(400).json({ 
+    res.status(200).json({ 
       message: "Task deleted successfully!"
     })
 

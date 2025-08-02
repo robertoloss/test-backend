@@ -5,6 +5,7 @@ import { prisma } from '../../prisma/prisma';
 export async function handleCreateTask(req: Request, res: Response) {
   const { title, color } = req.body
   const now = new Date();
+  console.log("handleCreateTask hit: ", title, color)
 
   try {
     const newTask = await prisma.task.create({
@@ -19,7 +20,7 @@ export async function handleCreateTask(req: Request, res: Response) {
 
     console.log("New task created: ", newTask)
 
-    res.status(400).json({ 
+    res.status(200).json({ 
       message: "New task created successfully!"
     })
 
